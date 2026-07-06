@@ -1,0 +1,21 @@
+{
+  "name": "zyx-web",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZyxLang/zyx-web.git"
+  },
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
