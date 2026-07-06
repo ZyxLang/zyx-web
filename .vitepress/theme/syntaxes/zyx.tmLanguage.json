@@ -1,0 +1,89 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Zyx",
+  "scopeName": "source.zyx",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#builtins" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.zyx",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.zyx",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.zyx",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.zyx",
+          "match": "\\\\[nt\"\\\\]"
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.zyx",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.zyx",
+          "match": "\\b(if|else|while|for|do|return|break|continue|switch|case|default|try|catch|throw)\\b"
+        },
+        {
+          "name": "keyword.declaration.zyx",
+          "match": "\\b(class|struct|enum|namespace|import|typedef|using|template|typename|extends|public|private|protected)\\b"
+        },
+        {
+          "name": "keyword.other.zyx",
+          "match": "\\b(const|auto|this|nullptr)\\b"
+        }
+      ]
+    },
+    "types": {
+      "name": "storage.type.zyx",
+      "match": "\\b(int|float|double|long|char|byte|string|bool|void|intptr)\\b"
+    },
+    "constants": {
+      "name": "constant.language.zyx",
+      "match": "\\b(true|false)\\b"
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.zyx",
+          "match": "\\b(print|println|gets|strlen|arrlen)\\b"
+        },
+        {
+          "name": "support.class.zyx",
+          "match": "\\b(fs|json|str|arr|math|time|os|tcp|http|hash|ffi|store|thread|win|test|async)\\."
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.zyx",
+          "match": "(==|!=|<=|>=|&&|\\|\\||\\+\\+|--|\\+=|-=|\\*=|/=|%=|[+\\-*/%<>=!?:])"
+        }
+      ]
+    }
+  }
+}

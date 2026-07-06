@@ -19,6 +19,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Checkout Zyx source
+        uses: actions/checkout@v4
+        with:
+          repository: ZyxLang/zyx
+          path: zyx-source
+          ref: main
+
+      - name: Setup Emscripten
+        uses: mymind/activate-emsdk@v3
+        with:
+          version: 3.1.64
+
+      - name: Build Zyx WASM
+        working-directory: zyx-source
+        run: |
+          emcmake cmake -B build-wasm -DCMAKE_BUILD_TYPE=Release
+          cmake --build build-wasm
+
+      - name: Copy WASM into site public/
+        run: |
+          cp zyx-source/build-wasm/wasm/zyx.js public/zyx.js
+          cp zyx-source/build-wasm/wasm/zyx.wasm public/zyx.wasm
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22

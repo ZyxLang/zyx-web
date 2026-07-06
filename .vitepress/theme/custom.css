@@ -41,3 +41,14 @@
   background: #6a44c9;
   border-color: #6a44c9;
 }
+
+/* Playground fills the viewport below the site nav */
+.zyx-playground-page .VPLocalNav,
+.zyx-playground-page .VPFooter {
+  display: none !important;
+}
+
+.zyx-playground-page .VPContent {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}

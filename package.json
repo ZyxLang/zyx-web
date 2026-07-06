@@ -10,12 +10,20 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "copy-wasm": "cp ../zyx/build-wasm/wasm/zyx.js ../zyx/build-wasm/wasm/zyx.wasm public/",
+    "sync-grammar": "cp ../zyx/editor/vscode-zyx/syntaxes/zyx.tmLanguage.json .vitepress/theme/syntaxes/zyx.tmLanguage.json && cp ../zyx/editor/vscode-zyx/language-configuration.json .vitepress/theme/syntaxes/zyx.language-configuration.json",
+    "sync": "npm run sync-grammar && npm run copy-wasm"
   },
   "devDependencies": {
     "vitepress": "^1.6.3"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@shikijs/monaco": "^4.3.1",
+    "monaco-editor": "^0.55.1",
+    "shiki": "^4.3.1"
   }
 }

@@ -11,6 +11,7 @@ export default defineConfig({
     logo: '/icon.svg',
     nav: [
       { text: 'Guide', link: '/getting-started' },
+      { text: 'Playground', link: '/playground' },
       { text: 'Language', link: '/language-guide' },
       { text: 'Self-hosting', link: '/bootstrap' },
       { text: 'Stdlib', link: '/standard-library' },
@@ -27,6 +28,7 @@ export default defineConfig({
         items: [
           { text: 'Home', link: '/' },
           { text: 'Getting started', link: '/getting-started' },
+          { text: 'Playground', link: '/playground' },
           { text: 'Self-hosting', link: '/bootstrap' }
         ]
       },
@@ -63,6 +65,15 @@ export default defineConfig({
     languageAlias: {
       zyx: 'cpp'
     }
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['monaco-editor', 'shiki', '@shikijs/monaco'],
+    },
+    resolve: {
+      dedupe: ['monaco-editor'],
+    },
   },
 
   head: [
