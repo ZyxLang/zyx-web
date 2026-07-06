@@ -2,4 +2,6 @@ node_modules/
 .npm/
 .vitepress/dist/
 .vitepress/cache/
+emsdk-cache/
+zyx-source/
 *.log

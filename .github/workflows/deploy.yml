@@ -31,7 +31,7 @@ jobs:
         uses: emscripten-core/setup-emsdk@v16
         with:
           version: 3.1.64
-          actions-cache-folder: emsdk-cache
+          actions-cache-folder: ${{ runner.temp }}/emsdk-cache
 
       - name: Build Zyx WASM
         working-directory: zyx-source
@@ -43,6 +43,9 @@ jobs:
         run: |
           cp zyx-source/build-wasm/wasm/zyx.js public/zyx.js
           cp zyx-source/build-wasm/wasm/zyx.wasm public/zyx.wasm
+
+      - name: Remove WASM build tree from workspace
+        run: rm -rf emsdk-cache zyx-source
 
       - uses: actions/setup-node@v4
         with:
