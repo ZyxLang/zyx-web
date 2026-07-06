@@ -66,8 +66,10 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', href: '/zyx-web/favicon.ico', sizes: '32x32' }],
     ['link', { rel: 'icon', href: '/zyx-web/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/zyx-web/favicon.ico', sizes: 'any' }],
+    ['link', { rel: 'icon', href: '/zyx-web/favicon-32.png', sizes: '32x32', type: 'image/png' }],
+    ['link', { rel: 'icon', href: '/zyx-web/favicon-16.png', sizes: '16x16', type: 'image/png' }],
     ['link', { rel: 'apple-touch-icon', href: '/zyx-web/apple-touch-icon.png' }]
   ]
 })
