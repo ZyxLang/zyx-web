@@ -1,6 +1,6 @@
 # Zyx documentation site
 
-Source for the [Zyx documentation](https://zyxlang.github.io/zyx-web/), built with [VitePress](https://vitepress.dev/).
+Source for the [Zyx documentation](https://zyx-lang.org/), built with [VitePress](https://vitepress.dev/).
 
 Language implementation and stdlib live in [ZyxLang/zyx](https://github.com/ZyxLang/zyx).
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open the URL printed in the terminal (usually `http://localhost:5173/zyx-web/`).
+Open the URL printed in the terminal (usually `http://localhost:5173/`).
 
 ## Build
 
